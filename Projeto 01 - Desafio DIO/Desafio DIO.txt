@@ -1,1 +1,12 @@
 # Desafio DIO - 02/08/2022
+
+- ls (listar o que tem na pasta)
+
+- git status
+
+- git add . ou  git add -a (enviar para o controle de versão)
+
+- git commit -m(para colocar msg) "colocar msg"
+
+- git push origin main (enviar para a nuvem/GitHub) 
+
