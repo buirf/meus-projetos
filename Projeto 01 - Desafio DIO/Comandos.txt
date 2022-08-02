@@ -1,6 +1,8 @@
-# Desafio DIO - 02/08/2022
+# Comandos - 02/08/2022
 
 - ls (listar o que tem na pasta)
+
+- cd (digite a pasta - acessar determinada pasta)
 
 - git status
 
