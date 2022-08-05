@@ -1,1 +1,22 @@
 # Linux
+
+usuario: bruno
+senha - senha
+
+"reboot" - Reinicia
+"shutdown" - Desliga
+
+"ip a"
+consulta ip
+
+Para acessar remoto uma máquina Linux através do windows-aplicativo putty.org
+no terminal, digitar: 
+"apt-get install openssh-server"
+se pedir o usuario root:
+"sudo apt-get install openssh-server"
+
+Para acessar remoto Linux -> Linux
+No terminal digitar:
+"ssh (nome do usuário do destino)@(ip)"
+senha
+
