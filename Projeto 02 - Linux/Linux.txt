@@ -5,6 +5,7 @@ senha - senha
 
 "reboot" - Reinicia
 "shutdown" - Desliga
+"clear" e "Ctrl+l" - Limpar a tela
 
 "ip a"
 consulta ip
@@ -19,4 +20,15 @@ Para acessar remoto Linux -> Linux
 No terminal digitar:
 "ssh (nome do usuário do destino)@(ip)"
 senha
+---------------------------------------------------------------------
+Navegação dentro do sistema Linux
+
+'pwd' -> onde vc está
+'cd /' -> ir pro diretório raiz
+'ls' -> listar arquivos
+'cd ..' -> volta um diretório
+'cd ../(pasta que quer acessar)' -> vai direto pro diretório que quer
+inicio da palavra + TAB -> Autocompleta
+
+
 
