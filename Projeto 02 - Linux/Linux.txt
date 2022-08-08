@@ -28,7 +28,54 @@ Navegação dentro do sistema Linux
 'ls' -> listar arquivos
 'cd ..' -> volta um diretório
 'cd ../(pasta que quer acessar)' -> vai direto pro diretório que quer
+
 inicio da palavra + TAB -> Autocompleta
+
+'ls | more' -> mostra os arquivos em lista. 'ctrl + c' -> Encerrar
+'*' usado como coringa para varios arquivos
+'?' letra especifica
+
+'ls (letra inicial) + * -> Apresenta lista com diretórios e arquivos da letra inicial
+
+### CRIAR ARQUIVO
+'touch' + 'nome do arquivo.extensão' -> criar arquivo
+
+''comando..ex ls' arquivo[x-z]*' seleciona os arquivos do x ao z
+ou arquivo[x, z]* seleciona os arquivos x e z.
+
+### LOCALIZAR ARQUIVOS
+'find -name' + parte do nome*
+
+### CRIANDO DIRETÓRIOS
+'mkdir + nome do diretório'
+ex. mkdir Documentos´
+
+### EXCLUINDO ARQUIVOS E DIRETÓRIOS
+'rmdir + nome do diretório'
+se o diretório tiver conteúdo, ele não exclui.
+
+'rm + nome do arquivo' para excluir arquivo
+'*.txt' 'arquivo*'
+
+'rm -rf (nome do diretório)' -> Apaga diretórios e arquivos.
+
+### OBTENDO AJUDA
+'ls --help' Versão de servidor: Inglês
+'ls -l' Apresenta o conteúdo em lista
+'ls -a' Apresenta arquivos ocultos
+'ls -lh' Apresenta o formato humano do tamanho de arquivos
+
+Pode consultar os comandos no google também
+
+
+
+
+
+
+
+
+
+
 
 
 
