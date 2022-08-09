@@ -21,7 +21,7 @@ No terminal digitar:
 "ssh (nome do usuário do destino)@(ip)"
 senha
 ---------------------------------------------------------------------
-Navegação dentro do sistema Linux
+### Navegação dentro do sistema Linux
 
 'pwd' -> onde vc está
 'cd /' -> ir pro diretório raiz
@@ -66,6 +66,47 @@ se o diretório tiver conteúdo, ele não exclui.
 'ls -lh' Apresenta o formato humano do tamanho de arquivos
 
 Pode consultar os comandos no google também
+-------------------------------------------------------------------
+
+### EXECUTANDO TAREFAS ADMINISTRATIVAS COMO ROOT
+'cat /etc/group' vizualizar conteúdo
+'sudo (...)' Deixa criar e excluir diretórios e arquivos bloqueados para administrador
+
+## LOGANDO COMO USUÁRIO ROOT
+'sudo passwd root' atribuir senha ao usuário root
+'su' trocar de usuário comum para o root
+'su (+ nome do usuário para acessar qualquer outro usuário)'
+
+## LIBERANDO ACESSO REMOTO DO USUÁRIO ROOT
+'sudo nano /etc/ssh/sshd_config'
+'PermitRootLogin yes'
+ctrl+o -> salvar
+ctrl+x -> sair
+sudo systemctl restart sshd
+
+## TRABALHANDO COM ARQUIVOS DE TEXTO
+'cat + (nome do arquivo)' Lê o que tem no arquivo
+'nano + (nome do arquivo)' Para editar arquivo
+Para criar novo arquivo pode utilizar o 'nano' + o nome do arquivo que deseja criar
+ctrl+o -> salvar
+ctrl+x -> sair
+
+## HISTÓRICO DE COMANDOS
+'history' histórico de comandos do usuário
+'!(numero do comando)' realiza o comando do histórico
+'!!' executa o ultimo comando realizado
+'history | grep "Padrão"' verifica alterações e/ou utilizados
+'export HISTTIMEFORMAT="%c "' -> data e hora do comando
+'history -c' -> Apaga o histórico "por hora"
+'set +o history' -> Desativa o history
+'set -o history' -> Ativa o history
+------------------------------------------------------------------------------
+### GERENCIANDO USUÁRIOS NO LINUX
+## CRIAND E EXCLUINDO USUÁRIOS
+ 
+
+
+
 
 
 
