@@ -1,17 +1,19 @@
 # Linux
+--help
 
 usuario: bruno
 senha - senha
 
-"reboot" - Reinicia
-"shutdown" - Desliga
-"clear" e "Ctrl+l" - Limpar a tela
+"reboot" -> Reinicia
+"shutdown" -> Desliga
+"clear" e "Ctrl+l" -> Limpar a tela
+"cat /../../" -> vizualiza o diretório e/ou arquivo que quiser
 
-"ip a"
-consulta ip
+"ip a" -> consulta ip
 
-Para acessar remoto uma máquina Linux através do windows-aplicativo putty.org
+### Para acessar remoto uma máquina Linux através do windows-aplicativo putty.org
 no terminal, digitar: 
+
 "apt-get install openssh-server"
 se pedir o usuario root:
 "sudo apt-get install openssh-server"
@@ -100,12 +102,57 @@ ctrl+x -> sair
 'history -c' -> Apaga o histórico "por hora"
 'set +o history' -> Desativa o history
 'set -o history' -> Ativa o history
+
+
 ------------------------------------------------------------------------------
 ### GERENCIANDO USUÁRIOS NO LINUX
-## CRIAND E EXCLUINDO USUÁRIOS
- 
+## CRIANDO E EXCLUINDO USUÁRIOS
+(Fora do root, não esquecer de usar o "sudo")
+
+'useradd "nome_de_logon" -m -c "nome completo"' -> Cria usuário, cria pasta e coloca o nome completo do usuário
+'chsh -s /bin/bsh usuário' - acesso ao kernel do sistema (shell padrão)
+'useradd "nome_usuário" -m -c "Nome" -s /bin/bash' -> Criar usuário completo
+'userdel -f "nome_de_logon"' -> Excluir usuário
+'userdel -r -f "usuário"' -> Excluir tuudo
+'passwd "usuário"' -> Criar senha
+
+## EDITANDO INFORMAÇÕES DO USUÁRIO
+'useradd "usuário" -c "texto informativo" -m -e "data"' -> usuario com expiração
+'passwd "usuário"' -> Criar senha
+'usermode "usuário" -s /bin/bash' -> fazer alterações no usuário
+'passwd "usuário" -e' -> Criar nova senha
+'cat /etc/passwd' -> usuários ja criado
+
+## SHELL SCRIPT - CRIANDO USUÁRIOS EM LOTE
+'useradd "usuário" -c "Nome" -s /bin/bash -m -p $(openssl passwd -crypt "senha")' -> criar usuário com senha
+'#!/bin/bash' -> dentro do arquivo criar script | 'useradd "usuário" -c "Nome" -s /bin/bash -m -p $(openssl passwd -crypt "senha")' repetir comando um abaixo do outro para a qauntidade que quiser
+'chmod +x "nome_do_arquivo".sh' -> Instalar o arquivo
+'./"nome_do_arquivo".sh' -> executar
 
 
+## ADICIONANDO USUÁRIOS A GRUPOS
+'usermod -G adm, sudo "usuário"'-> Dar permissão para o usuário à grupos 
+
+## CRIANDO NOVOS GRUPOS
+'groupadd "nome_do_grupo"' -> Criar grupo
+'groupdel "nome_do_grupo"' -> Excluir grupo
+'useradd "usuário" -c "nome" -m -s /bin/bash -p $(openssl passwd -crypt "senha") -g "nome_do_grupo"'-> criando usuários e ja adcionando á grupos
+'usermod -G "nome_do_grupo" "nome do usuário" '-> adcionar usuários
+'usermod -G "nome_do_grupo" "usuário"' -> Retirar do grupo e mandar pra outro
+'gpasswd -d "usuário" "grupo"' -> Remover usuário do grupo
+
+## SISTEMA DE PERMISSÕES
+'chown "novo_dono:novo_grupo" /"diretório ou texto"/' -> Trocar dono do grupo e o grupo
+'chmod "1ºDono=ex.7/2ºGrupo=5/Demais usuário =0 exemplo= 750" /diretório/' -> Alterar permissão de um diretório
+comando acima ficaria assim:
+'chmod 750 (diretório ou arquivo)'
+__________________________________
+As permissões equivalem à soma de:
+Leitura (r) = 4
+Gravação (w) = 2
+Execução (x) = 1
+Nenhuma = (0)
+___________________________________
 
 
 
