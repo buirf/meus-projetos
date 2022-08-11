@@ -143,7 +143,7 @@ ctrl+x -> sair
 
 ## SISTEMA DE PERMISSÕES
 'chown "novo_dono:novo_grupo" /"diretório ou texto"/' -> Trocar dono do grupo e o grupo
-'chmod "1ºDono=ex.7/2ºGrupo=5/Demais usuário =0 exemplo= 750" /diretório/' -> Alterar permissão de um diretório
+'chmod "1ºDono=ex.7/2ºGrupo=5/Demais usuário =0 exemplo= 750" /diretório/' -> Alterar permissão de um diretório ou arquivo
 comando acima ficaria assim:
 'chmod 750 (diretório ou arquivo)'
 __________________________________
@@ -153,8 +153,121 @@ Gravação (w) = 2
 Execução (x) = 1
 Nenhuma = (0)
 ___________________________________
+-------------------------------------------------------------------------
+
+### GERENCIAMENTO DE PACOTES LINUX (Software)
+## UBUNTU-DEBIAN
+--help
+'apt-get --help' -> Baixo nível.
+'apt --help' -> Alto nível.
+'apt list' -> Buscar pacotes disponíveis
+'apt list --installed' -> Pacotes instalados na máquina.  
+'apt list --upgradeable' -> Se tem atualizações
+'apt install ./"pacote"' -> Para instalar
+'wget "link"' -> Realizar download
+'apt remove "pacote" -y' -> Para remover
+
+## ATUALIZAÇÃO DO SISTEMA OPERACIONAL
+******Criar SCREENSHOT ANTES********
+'apt update' - Baixar últimas atualizações
+'apt upgrade -y' -> Instalar
+
+arquivos de instalação no ubuntu ".deb" 
+
+---------------------------------------------------
+### GERENCIAMENTO DE DISCOS
+## ADICIONADO UM NOVO DISCO
+
+'lsblk' -> Mostra os discos e partições
+'fdisk -l' -> Também mostra os discos
+
+## PARTICIONANDO E FORMATANDO DISCOS VIA TERMINAL
+'fdisk /dev/sd"b"'
+'n' -> adcionar nova partição
+'p ou e' -> se inteira ou dividida
+'w' -> para salvar 
+
+'mkfs.ext4 /dev/sd"b"' -> Formatar
+
+## MONTANDO E DESMONTANDO DISCOS
+
+'mkdir disco2' -> criar diretório dentro de qualquer lugar
+'mount /dev/sdb /mnt/disco2/' -> montar disco
+
+'umount /dev/sdb' -> Desmontar
+
+'nano /etc/fstab' -> Montar automaticamente
+'/dev/sdb /disk2 ext4 defaults 0 0' -> indicar o caminho e os comandos
+ctrl + o
+ctrl + x
+---------------------------------------------------
+### COPIAND ARQUIVOS E MANIPULANDO PROCESSOS
+## COPIANDO ARQUIVOS
+--help
+Exemplos:
+'cp -i "diretório/arquivo" /diretório de destino/' -> sai de e vai para.
+'cp -i /diretório/*.txt ou abcd*(todos) /diretório de destino' -> enviar mais de um arquivo 
+-i -> Para perguntar quando existir arquivo com o mesmo nome
+-r -> Copiar tudo, inclusive pastas
+-v -> Para visualizar o que esta fazendo
+
+## RENOMEANDO MOVENDO ARQUIVOS
+RECORTAR
+comando 'mv' -> ao invés do copiar, ele recorta
+-i -> Para perguntar quando existir arquivo com o mesmo nome 
+-v -> Para visualizar o que esta fazendo
+NÃO TEM '-r' ou seja, tem que fazer pasta por pasta.
+'mv "nome atual" "nome novo"' -> Renomeia
+
+## INICIANDO, VISUALIZANDO E ENCERRANDO PROCESSOS
+'ps a(todos usuários) u(fornece hora e usuário) x(processos executados fora do console)' -> Visualizar processos
+'kill "numero id"' -> Matar o processo
+'kill "nome"' -> Matar através do nome
+'killall "..."' -> fechar todos com o mesmo nome
+'w' -> usuários logado em servidor
+'who -a' -> Mostra o pid em servidor
+'kill "pid"' -> fechar usuário em servidor
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
